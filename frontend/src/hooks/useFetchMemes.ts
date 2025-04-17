@@ -6,8 +6,10 @@ import { Meme } from "@/types";
 const fetchMemes = async (): Promise<Meme[]> => {
   const cachedMemes = localStorage.getItem("memes");
 
+  const url = import.meta.env.VITE_API_URL;
+
   try {
-    const res = await axios.get("/api/memes");
+    const res = await axios.get(`${url}/memes`);
     const freshMemes: Meme[] = res.data;
 
     if (cachedMemes) {
