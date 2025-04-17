@@ -16,10 +16,12 @@ export default function CardsPage() {
       typeof error === "string" ? error : "An unknown error occurred"
     );
 
+  const safeMemes = Array.isArray(memes) ? memes : [];
+
   return (
     <DefaultLayout>
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-20">
-        {memes!.map((meme: Meme) => (
+        {safeMemes.map((meme: Meme) => (
           <Card key={meme.id}>
             <CardHeader className="flex justify-center pb-0">
               <Image alt="meme" height={300} src={meme.image} width={300} />

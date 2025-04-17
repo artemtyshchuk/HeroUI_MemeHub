@@ -32,6 +32,9 @@ export default function IndexPage() {
     onOpen();
   };
 
+  const safeMemes = Array.isArray(memes) ? memes : [];
+
+
   return (
     <DefaultLayout>
       <div className="w-full overflow-x-auto">
@@ -44,7 +47,7 @@ export default function IndexPage() {
             <TableColumn className="text-center">Actions</TableColumn>
           </TableHeader>
           <TableBody>
-            {memes!.map((meme: Meme) => (
+            {safeMemes.map((meme: Meme) => (
               <TableRow key={meme.id}>
                 <TableCell className="text-center">{meme.id}</TableCell>
                 <TableCell className="text-center">{meme.title}</TableCell>
