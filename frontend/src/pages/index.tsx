@@ -63,7 +63,7 @@ export default function IndexPage() {
                 <TableCell>
                   <Button
                     aria-label={`Edit meme with title: ${meme.title}`}
-                    className="flex justify-self-center"
+                    className="flex justify-self-center m-0"
                     color="primary"
                     variant="ghost"
                     onPress={() => handleEditClick(meme)}
