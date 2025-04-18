@@ -16,7 +16,6 @@ import { useLocation } from "react-router-dom";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 
-
 export const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
